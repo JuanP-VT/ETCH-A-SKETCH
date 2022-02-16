@@ -1,3 +1,7 @@
+:root{
+    --Template :'';
+}
+
 #maincontainer{
     background-color: blanchedalmond;
     display: flex;
@@ -9,16 +13,16 @@
 }
 #screen{
     margin-top: 100px;
-    height: 500px;
-    width: 500px;
+    height: 700px;
+    width: 700px;
     border: dashed;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+    grid-template-columns: var(--Template)
     
 }
 
 .pixel{
-border: solid;
-height: 20px;
-width: 20px;
+border:  solid 1px;
+height: auto;
+width: auto;
 }
