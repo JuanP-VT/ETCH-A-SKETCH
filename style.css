@@ -1,5 +1,6 @@
 :root{
     --Template :'';
+    --RANCOLOR: '';
 }
 
 #maincontainer{
@@ -22,7 +23,19 @@
 }
 
 .pixel{
-border:  solid 1px;
 height: auto;
 width: auto;
+transition: 1s;
 }
+.pixel:hover{
+    background-color: black;
+}
+.normalModeOn{
+    background-color: black;
+
+}
+
+.deactivated{
+    background-color: white;
+}
+
