@@ -32,6 +32,11 @@ height: 200px;
 height: auto;
 width: auto;
 transition: 1s;
+border: black solid 1px;
+}
+.pixel:hover{
+    background-color: black;
+
 }
 #controls{
     display: flex;
@@ -62,3 +67,4 @@ transition: 1s;
     border: solid;
     width: 250px;
 }
+
