@@ -1,12 +1,12 @@
 
 
 //Random color generator.
-let ranColor ='';
-function randomColor(){
-    ranColor = Math.floor(Math.random()*16777215).toString(16);
-    return ranColor;
+function random_rgba() {
+    let o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
 
+let chosenColor = random_rgba();
 
 //Generate a square grid with a prompt imput.
 const mainScreen = document.querySelector('#screen');
@@ -38,24 +38,30 @@ return gridValue;
 
 
 //Div will change color
-function paintFunction(){
-    randomColor();
-    this.classList.add('normalModeOn')
+function paintRandom(){
+    chosenColor = random_rgba();
+    let boxId =(this.id)
+    document.getElementById(boxId).style.background = chosenColor;
+    console.log(document.getElementById(boxId).style.background);
     console.log(this);
 }
+let paintMode = 'paintRandom';
 
 function pixelInk(){
 const gridPixels = document.querySelectorAll('.pixel');
 console.log(gridPixels);
+if (paintMode == 'paintRandom') {
 gridPixels.forEach(gridPixels => {
-gridPixels.addEventListener('mouseover', paintFunction );
+gridPixels.addEventListener('mouseover', paintRandom );
 });
+}
+//if
 }
 //To stop pen when mouse is up.
 function stopPen(){
     const gridPixels = document.querySelectorAll('.pixel');
     gridPixels.forEach(gridPixels => {
-        gridPixels.removeEventListener('mouseover',paintFunction);
+        gridPixels.removeEventListener('mouseover',paintRandom);
     });
 }
 
@@ -66,3 +72,5 @@ mainScreen.addEventListener('mouseup',stopPen)
 gridGenerator(numberOfGrids);
 gridTemplateColumValue();
 
+let gridSliderValue = document.getElementById("gridslider").value;
+console.log(gridSliderValue)
