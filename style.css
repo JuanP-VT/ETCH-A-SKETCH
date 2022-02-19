@@ -2,31 +2,44 @@
     --Template :'';
 }
 
-#maincontainer{
+body{
     background: rgb(233,233,233);
-background: radial-gradient(circle, rgba(233,233,233,1) 0%, rgba(148,187,233,1) 100%);
+    background: radial-gradient(circle, rgba(233,233,233,1) 0%, rgba(148,187,233,1) 100%);
+    
+font-family: 'Indie Flower', cursive;
+font-family: 'Titan One', cursive;
+}
+input{
+    font-family: 'Indie Flower', cursive;
+    box-shadow: 10px 10px 8px grey;
+    color: goldenrod;
+    background-color: rgb(61, 58, 58);
+    border-radius: 5%;
+    font-size: 20px;
+}
+#mainheader{
+    text-align: center;
+    font-size: 50px;
+    color: rgb(240, 98, 98);
+    margin-right: 20px;
+    margin-bottom: -50px;
+}
+#maincontainer{
     display: flex;
     justify-content: center;
     align-content: center;
 
 }
-
-#footer{
-    display: flex;
-    background: rgb(233,233,233);
-background: radial-gradient(circle, rgba(233,233,233,1) 0%, rgba(148,187,233,1) 100%);
-height: 200px;
-}
-
 #screen{
     margin-top: 100px;
     height: 700px;
-    width: 700px;
-    border: dashed;
+    width: 900px;
+    border: groove 5px;
     display: grid;
     grid-template-columns: var(--Template);
     background-color: #fff8dc;
-    
+    box-shadow: 10px 10px 20px grey;
+    border-color: red;
     
 }
 
@@ -34,7 +47,8 @@ height: 200px;
 height: auto;
 width: auto;
 transition: 1s;
-border: rgb(0, 0, 0) solid 1px;
+border: solid black 1px;
+border-radius: 9%;
 }
 .pixel:hover{
     background-color: black;
@@ -42,27 +56,40 @@ border: rgb(0, 0, 0) solid 1px;
 }
 #controls{
     display: flex;
-    border: solid;
     width: 600px;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 }
 .panel{
     width: 250px;
     height: 500px;
-    border: solid;
+    border: groove;
     display: flex;
     flex-direction: column;
     gap: 60px;
     padding: 30px;
+    border-radius: 10%;
+    box-shadow: -10px 5px 5px grey;
+    border-color: rgb(126, 113, 113);
+}
+
+.paneltitle{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 25px;
+}
+.stylish{
+    margin-top: 30px;
+    margin-bottom:-50px ;
 }
 
 #modes{
-    border: solid;
     width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 }
 
 .paneltittle{
@@ -70,3 +97,48 @@ border: rgb(0, 0, 0) solid 1px;
     width: 250px;
 }
 
+.panel.modess{
+    box-shadow: 10px 5px 5px grey;
+    gap: 50px;
+}
+
+
+input#ColorSlider{
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    margin-top: -20px;
+}
+
+#pickcolor{
+    margin-bottom: -25px;
+}
+#Erase{
+    margin-bottom: -20px;
+}
+#displaymode{
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+#footer{
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    }
+#footerinfo{
+    display: flex;
+    height: 80px;
+}
+#proftext{
+    margin-top: 35px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img{
+    height: 70%;
+    background-color: transparent;
+}

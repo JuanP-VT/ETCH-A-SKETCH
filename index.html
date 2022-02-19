@@ -5,10 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sketcher</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Titan+One&display=swap');
+            </style>
     <link rel="stylesheet" href="./style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div id = "mainheader"> Etch A Sketch </div>
     <div id="maincontainer">
         <div id="controls"> 
             <div class="panel"> 
@@ -21,16 +28,25 @@
         </div>
         <div id="screen"> </div>
         <div id="modes"> 
-                <div  class="panel">
+                <div  class="panel modess">
                 <div class = 'paneltitle'> Modes</div>
-                <div> <input type ='button' value ='Normal' id="Normal"></div>
-                <div> <input type ='button' value ='Rainbow' id="Rainbow"></div>
-                <div> <input type ='color'  id="ColorSlider"></div>
-                <div> <input type ='button' value ='Erase' id="Erase"></div>
-                <div id =displaymode> Mode : normal</div>
+                <input type ='button' value ='Normal' id="Normal">
+                <input type ='button' value ='Rainbow' id="Rainbow">
+                <div id="pickcolor"> Pick color</div>
+                <div><input type ='color'  id="ColorSlider"></div>
+                <input type ='button' value ='Erase' id="Erase">
+                <div id =displaymode> Mode : normal </div>
         </div>
         </div>
     </div>
-    <div id="footer"> footer yo</div>
+    <div id="footer"> 
+        <div id = footerinfo> 
+            <div id="proftext"> Made by Reje-wb</div>
+            <div id="imgholder"> <p><a href="https://github.com/Reje-wb">
+                <img src="./profile.png" alt="gitHubProfile" width="100" height="130s">
+                </a></p> </div>
+        </div>
+    </div>
 </body>
 </html>
+
