@@ -24,7 +24,9 @@ height: 200px;
     width: 700px;
     border: dashed;
     display: grid;
-    grid-template-columns: var(--Template)
+    grid-template-columns: var(--Template);
+    background-color: #fff8dc;
+    
     
 }
 
@@ -32,7 +34,7 @@ height: 200px;
 height: auto;
 width: auto;
 transition: 1s;
-border: black solid 1px;
+border: rgb(0, 0, 0) solid 1px;
 }
 .pixel:hover{
     background-color: black;

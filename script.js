@@ -4,6 +4,13 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+function random_rgba() {
+    let o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
+let color = random_rgba();
+
 //Set grid column number.
 function gridTemplateValue(){
     let templateValue = '';
@@ -54,3 +61,73 @@ applyButton.addEventListener('click', () =>{
 //Size slider value display.
 const gridSlider = document.querySelector('#gridslider');
 gridSlider.addEventListener('input',displayGridSize)
+
+//Set gameModes ----
+let gameMode = 'normal' //Default game mode.
+function paintFunction(){
+    if (gameMode == 'normal'){
+        const divId = this.id;
+        document.getElementById(divId).style.background = document.querySelector('#ColorSlider').value;
+    }
+    if (gameMode == 'rainbow'){
+            const divId = this.id
+            let divColor = random_rgba();
+            document.getElementById(divId).style.background = divColor;
+        }
+    if (gameMode == 'erase'){
+        const divId = this.id
+        document.getElementById(divId).style.background ='cornsilk'
+    }
+}
+
+
+
+
+
+
+//Normalmode
+const normalMode=document.querySelector('#Normal');
+normalMode.addEventListener('click', () =>{
+    gameMode = 'normal';
+    currentMode.textContent = 'Mode : '+gameMode;
+    document.querySelector('#ColorSlider').value = '#000000';
+});
+
+//Rainbowmode
+const rainbowMod = document.querySelector('#Rainbow');
+rainbowMod.addEventListener('click',() =>{
+    gameMode = 'rainbow';
+    currentMode.textContent = 'Mode : '+gameMode;
+});
+
+//Choose mode.
+    const colorSliderValue = document.querySelector('#ColorSlider').value
+    const colorSlider = document.querySelector('#ColorSlider')
+
+    // Erase mode
+    const eraseMode = document.querySelector('#Erase')
+    eraseMode.addEventListener('click',() =>{
+        gameMode = 'erase';
+        currentMode.textContent = 'Mode : '+gameMode;
+        document.querySelector('#ColorSlider').value = '#fff8dc';
+    });
+    //Display current mode.
+const currentMode = document.querySelector('#displaymode');
+
+
+//Paint only on mousedown
+mainScreen.addEventListener('mousedown',() =>{
+    let pixels = document.querySelectorAll('.pixel');
+    pixels.forEach(pixels => {
+        pixels.addEventListener('mouseover',paintFunction);
+    });
+});
+
+
+function stopPainting(){
+    let pixels = document.querySelectorAll('.pixel');
+    pixels.forEach(pixels => {
+        pixels.removeEventListener('mouseover',paintFunction);
+    });
+}
+mainScreen.addEventListener('mouseup',stopPainting);
